@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@xyflow/react": "^12.8.6",
     "d3": "7.7.0",
     "d3-dispatch": "3.0.1",
     "d3-force": "3.0.0",
@@ -8,11 +9,9 @@
     "dagre": "latest",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-scripts": "5.0.1",
-    "reactflow": "11.3.3"
+    "react-scripts": "5.0.1"
   },
   "main": "/index.js",
-  "devDependencies": {},
   "keywords": [],
   "name": "reactflow-d3-flow-based-layout-forked",
   "description": null,

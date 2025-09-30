@@ -9,7 +9,7 @@ export const mockNodes = {
     name: "Center Node",
     nodeType: "centerNode",
     width: 120,
-    height: 60,
+    height: 120,
     isCenter: true  // 标记为中心节点
   },
   // 第一层：围绕中心的节点
@@ -18,56 +18,137 @@ export const mockNodes = {
     name: "Service A",
     nodeType: "serviceNode",
     width: 100,
-    height: 50
+    height: 100
   },
   "node-2": {
     id: "node-2",
     name: "Service B",
     nodeType: "serviceNode",
     width: 100,
-    height: 50
+    height: 100
   },
   "node-3": {
     id: "node-3",
     name: "Service C",
     nodeType: "serviceNode",
     width: 100,
-    height: 50
+    height: 100
   },
   "node-4": {
     id: "node-4",
     name: "Service D",
     nodeType: "serviceNode",
     width: 100,
-    height: 50
+    height: 100
   },
   "node-5": {
     id: "node-5",
     name: "Service E",
     nodeType: "serviceNode",
     width: 100,
-    height: 50
+    height: 100
   },
   "node-6": {
     id: "node-6",
     name: "Service F",
     nodeType: "serviceNode",
     width: 100,
-    height: 50
+    height: 100
   },
   "node-7": {
     id: "node-7",
     name: "Service G",
     nodeType: "serviceNode",
     width: 100,
-    height: 50
+    height: 100
   },
   "node-8": {
     id: "node-8",
     name: "Service H",
     nodeType: "serviceNode",
     width: 100,
-    height: 50
+    height: 100
+  },
+  // Service G 的子节点 - 10个子节点
+  "node-g-child-1": {
+    id: "node-g-child-1",
+    name: "G Sub-Service 1",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
+  },
+  "node-g-child-2": {
+    id: "node-g-child-2",
+    name: "G Sub-Service 2",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
+  },
+  "node-g-child-3": {
+    id: "node-g-child-3",
+    name: "G Sub-Service 3",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
+  },
+  "node-g-child-4": {
+    id: "node-g-child-4",
+    name: "G Sub-Service 4",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
+  },
+  "node-g-child-5": {
+    id: "node-g-child-5",
+    name: "G Sub-Service 5",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
+  },
+  "node-g-child-6": {
+    id: "node-g-child-6",
+    name: "G Sub-Service 6",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
+  },
+  "node-g-child-7": {
+    id: "node-g-child-7",
+    name: "G Sub-Service 7",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
+  },
+  "node-g-child-8": {
+    id: "node-g-child-8",
+    name: "G Sub-Service 8",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
+  },
+  "node-g-child-9": {
+    id: "node-g-child-9",
+    name: "G Sub-Service 9",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
+  },
+  "node-g-child-10": {
+    id: "node-g-child-10",
+    name: "G Sub-Service 10",
+    nodeType: "childNode",
+    width: 90,
+    height: 45,
+    parentNode: "node-7"
   }
 };
 
@@ -119,6 +200,67 @@ export const mockEdges = [
     pItem: {
       start: { id: "center" },
       end: { id: "node-8" }
+    }
+  },
+  // Service G 的子节点连接 - 10个子节点
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-1" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-2" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-3" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-4" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-5" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-6" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-7" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-8" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-9" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "node-7" },
+      end: { id: "node-g-child-10" }
     }
   }
 ];

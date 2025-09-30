@@ -1,12 +1,16 @@
-import React, { useCallback, useEffect, useRef } from "react";
-import ReactFlow, {
-  ConnectionLineType,
+import React, { useCallback, useEffect, useRef, useMemo } from "react";
+import {
+  ReactFlow,
   useNodesState,
-  useEdgesState
-} from "reactflow";
-import "reactflow/dist/style.css";
+  useEdgesState,
+  Background
+} from "@xyflow/react";
+import "@xyflow/react/dist/style.css";
 
 import { mockNodes, mockEdges } from "./mock.js";
+import CustomNode from "./CustomNode.js";
+import FloatingEdge from "./FloatingEdge.js";
+// import FloatingConnectionLine from "./FloatingConnectionLine.js";
 
 import "./index.css";
 import { createForceSimulation, getInitialLayout } from "./util.js";
@@ -22,6 +26,12 @@ const LayoutFlow = () => {
   
   const simulationRef = useRef(null);
   const nodesDataRef = useRef(d3Nodes);
+
+  // 定义自定义节点类型
+  const nodeTypes = useMemo(() => ({ custom: CustomNode }), []);
+  
+  // 定义自定义边类型
+  const edgeTypes = useMemo(() => ({ floating: FloatingEdge }), []);
 
   // 创建并启动力导向模拟
   useEffect(() => {
@@ -95,14 +105,17 @@ const LayoutFlow = () => {
       <ReactFlow
         nodes={nodes}
         edges={edges}
+        nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onNodeDragStart={handleNodeDragStart}
         onNodeDrag={handleNodeDrag}
         onNodeDragStop={handleNodeDragStop}
-        connectionLineType={ConnectionLineType.SmoothStep}
         fitView
-      />
+      >
+        <Background />
+      </ReactFlow>
       <div className="controls">
         {/* <button onClick={() => onLayout("TB")}>vertical layout</button>
         <button onClick={() => onLayout("LR")}>horizontal layout</button> */}

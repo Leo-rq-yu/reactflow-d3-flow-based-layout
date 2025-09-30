@@ -15,3 +15,26 @@
 .layoutflow .controls button:first-child {
   margin-right: 10px;
 }
+
+/* 确保边和箭头正确显示 */
+.react-flow__edge-path {
+  stroke: #b1b1b7 !important;
+  stroke-width: 2 !important;
+  fill: none !important;
+}
+
+.react-flow__edge {
+  pointer-events: all !important;
+}
+
+/* 箭头标记样式 */
+.react-flow__arrowhead polyline,
+.react-flow__arrowhead polygon,
+.react-flow__arrowhead path {
+  fill: #b1b1b7 !important;
+  stroke: #b1b1b7 !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #555 !important;
+}
