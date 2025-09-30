@@ -1,7 +1,130 @@
 const position = { x: 0, y: 0 };
 const edgeType = "smoothstep";
 
+// 径向布局的简化 mock 数据
 export const mockNodes = {
+  // 中心节点
+  "center": {
+    id: "center",
+    name: "Center Node",
+    nodeType: "centerNode",
+    width: 120,
+    height: 60,
+    isCenter: true  // 标记为中心节点
+  },
+  // 第一层：围绕中心的节点
+  "node-1": {
+    id: "node-1",
+    name: "Service A",
+    nodeType: "serviceNode",
+    width: 100,
+    height: 50
+  },
+  "node-2": {
+    id: "node-2",
+    name: "Service B",
+    nodeType: "serviceNode",
+    width: 100,
+    height: 50
+  },
+  "node-3": {
+    id: "node-3",
+    name: "Service C",
+    nodeType: "serviceNode",
+    width: 100,
+    height: 50
+  },
+  "node-4": {
+    id: "node-4",
+    name: "Service D",
+    nodeType: "serviceNode",
+    width: 100,
+    height: 50
+  },
+  "node-5": {
+    id: "node-5",
+    name: "Service E",
+    nodeType: "serviceNode",
+    width: 100,
+    height: 50
+  },
+  "node-6": {
+    id: "node-6",
+    name: "Service F",
+    nodeType: "serviceNode",
+    width: 100,
+    height: 50
+  },
+  "node-7": {
+    id: "node-7",
+    name: "Service G",
+    nodeType: "serviceNode",
+    width: 100,
+    height: 50
+  },
+  "node-8": {
+    id: "node-8",
+    name: "Service H",
+    nodeType: "serviceNode",
+    width: 100,
+    height: 50
+  }
+};
+
+export const mockEdges = [
+  // 所有节点都连接到中心节点
+  {
+    pItem: {
+      start: { id: "center" },
+      end: { id: "node-1" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "center" },
+      end: { id: "node-2" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "center" },
+      end: { id: "node-3" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "center" },
+      end: { id: "node-4" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "center" },
+      end: { id: "node-5" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "center" },
+      end: { id: "node-6" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "center" },
+      end: { id: "node-7" }
+    }
+  },
+  {
+    pItem: {
+      start: { id: "center" },
+      end: { id: "node-8" }
+    }
+  }
+];
+
+// 保留原始复杂数据作为备份
+export const mockNodesOld = {
   "5efba79f-a52c-47a2-a0ce-e9bd94c45952": {
     id: "5efba79f-a52c-47a2-a0ce-e9bd94c45952",
     parentComponentId: "d30f66da-f91b-4bb5-b964-0c3e02dabec7",
@@ -995,7 +1118,7 @@ export const mockNodes = {
   }
 };
 
-export const mockEdges = {
+export const mockEdgesOld = {
   "5efba79f-a52c-47a2-a0ce-e9bd94c45952-START-EDGE": {
     node: "5efba79f-a52c-47a2-a0ce-e9bd94c45952",
     pItem: {
